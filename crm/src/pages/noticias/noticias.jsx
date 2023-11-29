@@ -7,7 +7,7 @@ import "./noticias.css";
 function Noticias() {
   const [noticias, setNoticias] = useState([]);
   const apiKey = "4c9c733bf3e64536a9cba78dff8f538b";
-  const apiUrl = `https://newsapi.org/v2/everything?q=apple&from=2023-10-24&sortBy=publishedAt&apiKey=${apiKey}`;
+  const apiUrl = `https://newsapi.org/v2/everything?q=tesla&from=2023-10-29&sortBy=publishedAt&apiKey=${apiKey}`;
 
   useEffect(() => {
     axios
