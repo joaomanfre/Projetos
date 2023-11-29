@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, } from "react-router-dom";
 import logo from"../../assets/logo.png";
 
 function Menu(props){
@@ -12,7 +12,7 @@ function Menu(props){
 
             <a href="/" className="d-flex align-itens-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                     <span className="fs-5 d-nome d-sm-inline">
-                    <img src={logo} className="img-logo" />
+                    <img src={logo} className="img-logo" alt=" " />
                 </span>
                 </a>
                 <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-itens-sm-start" id="menu">
@@ -38,6 +38,12 @@ function Menu(props){
                     <li className="nav-item">
                         <Link to="/previsao" className={props.page === "previsao" ? linkBlue : linkBlack}>
                             <i className="=fs-4 bi bi-wallet2"></i> <span className="ms-1 d-none d-sm-inline">Previsão</span>
+                        </Link>
+                    </li>
+                    
+                    <li className="nav-item">
+                        <Link to="/atividades" className={props.page === "atividades" ? linkBlue : linkBlack}>
+                            <i className="=fs-4 bi bi-wallet2"></i> <span className="ms-1 d-none d-sm-inline">Atividades </span>
                         </Link>
                     </li>
 

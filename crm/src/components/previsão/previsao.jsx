@@ -12,7 +12,6 @@ const Previsao = () => {
     // Substitua a cidade e o país conforme necessário
     const cidade = "Votuporanga";
     const pais = "br";
-
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cidade},${pais}&appid=${apiKey}`;
 
     axios
@@ -27,7 +26,19 @@ const Previsao = () => {
 
   if (!previsao) {
     return <div>Carregando...</div>;
+
   }
+
+  const palavrasIngles = ['broken clouds', 'overcast clouds', 'scattered clouds', 'light rain', 'clear sky'];
+    const palavrasTraduzidas = ['Nuvens Quebradas', 'Nuvens Nubladas', 'Nuvens Dispersas', 'Chuva Leve', 'Céu Limpo']
+    let resultadoPalavra
+
+    for (let i = 0; i < palavrasIngles.length; i++) {
+        if (palavrasIngles[i] === previsao.weather[0].description) {
+            resultadoPalavra = palavrasTraduzidas[i];
+        }
+        console.log(previsao.weather[0].description)
+    }
 
   return (
     <div>
@@ -47,7 +58,7 @@ const Previsao = () => {
       <h2>Previsão do Tempo</h2>
       <p>Cidade: {previsao.name}</p>
       <p>Temperatura: {Math.round (previsao.main.temp - 273.15)} °C</p>
-      <p>Condição: {previsao.weather[0].description}</p>
+      <p>Condição: {resultadoPalavra}</p>
     </div>
             </div>
 
