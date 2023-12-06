@@ -1,14 +1,15 @@
+//import REACT; AXIOS; NOTICIAS CSS
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Menu from "../../components/menu/menu";
-import Busca from "../../components/busca/busca";
 import "./noticias.css";
 
+//function do noticias
 function Noticias() {
   const [noticias, setNoticias] = useState([]);
   const apiKey = "4c9c733bf3e64536a9cba78dff8f538b";
-  const apiUrl = `https://newsapi.org/v2/everything?q=tesla&from=2023-10-29&sortBy=publishedAt&apiKey=${apiKey}`;
+  const apiUrl = `https://newsapi.org/v2/everything?q=tesla&from=2023-11-01&sortBy=publishedAt&apiKey=${apiKey}`;
 
+  //axios effect
   useEffect(() => {
     axios
       .get(apiUrl)
@@ -20,19 +21,12 @@ function Noticias() {
       });
   }, []);
 
+  //html
   return (
     <div>
       <div className="container-fluid">
         <div className="row flex-nowrap">
-          <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0">
-            <Menu page="noticias" />
-          </div>
-
           <div className="col py-3 me-3">
-            <div className="mb-5">
-              <Busca texto="Busca por Negócios" />
-            </div>
-
             <div className="d-flex justify-content-between">
               <ul className="fs-3 noticias">
                 {noticias.map((noticia, index) => (
@@ -44,14 +38,12 @@ function Noticias() {
                 ))}
               </ul>
             </div>
-
           </div>
         </div>
       </div>
-
     </div>
   );
 }
 
-
+//export do arquivo
 export default Noticias;

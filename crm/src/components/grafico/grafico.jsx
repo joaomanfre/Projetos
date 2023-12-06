@@ -1,5 +1,7 @@
+//import
 import { Chart } from "react-google-charts";
 
+//function do grafico
 function Grafico(props) {
     const dados = [
         ["Mês", "Valor"],
@@ -17,10 +19,12 @@ function Grafico(props) {
         ["12", 1000],
     ];
 
+    //constante options
     const options = {
         legend: props.legenda ? {} : { position: "none" }
     }
 
+    //html
     return <div className="card">
         <div className="card-header">
             {props.titulo}
@@ -37,4 +41,5 @@ function Grafico(props) {
 
 }
 
+//export do arquivo
 export default Grafico;

@@ -1,8 +1,11 @@
+//import MENU; BUSCA; NOTICIAS
 import Menu from "../../components/menu/menu.jsx";
 import Busca from "../../components/busca/busca.jsx";
 import Noticias from "../../components/noticias/noticias.jsx";
 
+//function page_noticias
 function Page_noticias(){
+  //html
   return <>
 
   <div className="container-fluid">
@@ -16,6 +19,7 @@ function Page_noticias(){
         <Busca texto="Buscar por Negócios" />
       </div>
 
+      {/* puxar noticias */}
       <div className="d-flex justify-content-between mb-3">
         <div className="">
           <Noticias />
@@ -31,4 +35,5 @@ function Page_noticias(){
   </>
 }
 
+//export do arquivo
 export default Page_noticias

@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap');
-
+/* import da fonte */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* corpo */
 body{
     overflow-x: hidden;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Bebas Neue';
     background-color: rgb(255, 255, 255);
     font-weight: 500;
 }
 
+/* select */
 select {
     border: 0px;
     background-color: #fff;
